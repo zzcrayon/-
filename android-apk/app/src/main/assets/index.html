@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0d1b2a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="贪吃蛇">
+  <title>贪吃蛇</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icons/icon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="topbar" aria-label="游戏信息">
+      <div>
+        <p class="eyebrow">Snake</p>
+        <h1>贪吃蛇</h1>
+      </div>
+      <div class="stats">
+        <span>得分 <strong id="score">0</strong></span>
+        <span>最高 <strong id="highScore">0</strong></span>
+      </div>
+    </section>
+
+    <section class="game-stage" aria-label="贪吃蛇游戏区域">
+      <canvas id="game" width="576" height="576"></canvas>
+      <button id="startButton" class="primary-action" type="button">开始</button>
+      <div id="message" class="message" aria-live="polite"></div>
+    </section>
+
+    <section class="controls" aria-label="游戏控制">
+      <div class="segmented" role="group" aria-label="难度">
+        <button class="difficulty" type="button" data-level="easy">简单</button>
+        <button class="difficulty active" type="button" data-level="normal">普通</button>
+        <button class="difficulty" type="button" data-level="hard">困难</button>
+      </div>
+
+      <div class="pad" aria-label="方向键">
+        <button type="button" data-dir="up" aria-label="向上">▲</button>
+        <button type="button" data-dir="left" aria-label="向左">◀</button>
+        <button type="button" data-dir="right" aria-label="向右">▶</button>
+        <button type="button" data-dir="down" aria-label="向下">▼</button>
+      </div>
+
+      <div class="actions">
+        <button id="pauseButton" type="button">暂停</button>
+        <button id="restartButton" type="button">重开</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
